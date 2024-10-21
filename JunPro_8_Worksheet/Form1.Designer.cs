@@ -31,33 +31,33 @@
             DataUsers = new Label();
             Header = new Panel();
             panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            panel4 = new Panel();
-            InsertButton = new Button();
-            Update = new Button();
-            Delete = new Button();
-            NamaLabel = new Label();
-            AlamatLabel = new Label();
+            HandphoneBox = new TextBox();
+            AlamatBox = new TextBox();
             NoHandphoneLabel = new Label();
-            dataGridView1 = new DataGridView();
+            AlamatLabel = new Label();
+            NamaLabel = new Label();
+            NamaBox = new TextBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            Delete = new Button();
+            Update = new Button();
+            InsertButton = new Button();
+            panel2 = new Panel();
+            dataGridView = new DataGridView();
+            panel3 = new Panel();
+            panel4 = new Panel();
             tableLayoutPanel4 = new TableLayoutPanel();
             LoadButton = new Button();
-            NamaBox = new TextBox();
-            AlamatBox = new TextBox();
-            HandphoneBox = new TextBox();
             Header.SuspendLayout();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,7 +71,6 @@
             DataUsers.TabIndex = 0;
             DataUsers.Text = "Data Users";
             DataUsers.TextAlign = ContentAlignment.MiddleCenter;
-            DataUsers.Click += label1_Click;
             // 
             // Header
             // 
@@ -81,7 +80,6 @@
             Header.Name = "Header";
             Header.Size = new Size(770, 100);
             Header.TabIndex = 1;
-            Header.Paint += Header_Paint;
             // 
             // panel1
             // 
@@ -92,24 +90,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(770, 120);
             panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(dataGridView1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(15, 235);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(770, 140);
-            panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(panel4);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(15, 375);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(770, 63);
-            panel3.TabIndex = 4;
             // 
             // tableLayoutPanel1
             // 
@@ -145,7 +125,69 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
             tableLayoutPanel2.Size = new Size(286, 114);
             tableLayoutPanel2.TabIndex = 0;
-            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
+            // 
+            // HandphoneBox
+            // 
+            HandphoneBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            HandphoneBox.Location = new Point(108, 84);
+            HandphoneBox.Margin = new Padding(0);
+            HandphoneBox.Name = "HandphoneBox";
+            HandphoneBox.Size = new Size(178, 23);
+            HandphoneBox.TabIndex = 7;
+            // 
+            // AlamatBox
+            // 
+            AlamatBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            AlamatBox.Location = new Point(108, 46);
+            AlamatBox.Margin = new Padding(0);
+            AlamatBox.Name = "AlamatBox";
+            AlamatBox.Size = new Size(178, 23);
+            AlamatBox.TabIndex = 6;
+            // 
+            // NoHandphoneLabel
+            // 
+            NoHandphoneLabel.AutoSize = true;
+            NoHandphoneLabel.Dock = DockStyle.Left;
+            NoHandphoneLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NoHandphoneLabel.Location = new Point(3, 78);
+            NoHandphoneLabel.Name = "NoHandphoneLabel";
+            NoHandphoneLabel.Size = new Size(90, 36);
+            NoHandphoneLabel.TabIndex = 4;
+            NoHandphoneLabel.Text = "No Handphone";
+            NoHandphoneLabel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // AlamatLabel
+            // 
+            AlamatLabel.AutoSize = true;
+            AlamatLabel.Dock = DockStyle.Left;
+            AlamatLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AlamatLabel.Location = new Point(3, 38);
+            AlamatLabel.Name = "AlamatLabel";
+            AlamatLabel.Size = new Size(46, 40);
+            AlamatLabel.TabIndex = 2;
+            AlamatLabel.Text = "Alamat";
+            AlamatLabel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // NamaLabel
+            // 
+            NamaLabel.AutoSize = true;
+            NamaLabel.Dock = DockStyle.Left;
+            NamaLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NamaLabel.Location = new Point(3, 0);
+            NamaLabel.Name = "NamaLabel";
+            NamaLabel.Size = new Size(39, 38);
+            NamaLabel.TabIndex = 0;
+            NamaLabel.Text = "Nama";
+            NamaLabel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // NamaBox
+            // 
+            NamaBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            NamaBox.Location = new Point(108, 7);
+            NamaBox.Margin = new Padding(0);
+            NamaBox.Name = "NamaBox";
+            NamaBox.Size = new Size(178, 23);
+            NamaBox.TabIndex = 5;
             // 
             // tableLayoutPanel3
             // 
@@ -163,40 +205,6 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.Size = new Size(472, 114);
             tableLayoutPanel3.TabIndex = 1;
-            tableLayoutPanel3.Paint += tableLayoutPanel3_Paint;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(tableLayoutPanel4);
-            panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(629, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(141, 63);
-            panel4.TabIndex = 1;
-            // 
-            // InsertButton
-            // 
-            InsertButton.Dock = DockStyle.Fill;
-            InsertButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            InsertButton.Location = new Point(10, 10);
-            InsertButton.Margin = new Padding(10);
-            InsertButton.Name = "InsertButton";
-            InsertButton.Size = new Size(141, 94);
-            InsertButton.TabIndex = 0;
-            InsertButton.Text = "Insert";
-            InsertButton.UseVisualStyleBackColor = true;
-            // 
-            // Update
-            // 
-            Update.Dock = DockStyle.Fill;
-            Update.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Update.Location = new Point(171, 10);
-            Update.Margin = new Padding(10);
-            Update.Name = "Update";
-            Update.Size = new Size(141, 94);
-            Update.TabIndex = 1;
-            Update.Text = "Update";
-            Update.UseVisualStyleBackColor = true;
             // 
             // Delete
             // 
@@ -209,51 +217,70 @@
             Delete.TabIndex = 2;
             Delete.Text = "Delete";
             Delete.UseVisualStyleBackColor = true;
+            Delete.Click += Delete_Click;
             // 
-            // NamaLabel
+            // Update
             // 
-            NamaLabel.AutoSize = true;
-            NamaLabel.Dock = DockStyle.Left;
-            NamaLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            NamaLabel.Location = new Point(3, 0);
-            NamaLabel.Name = "NamaLabel";
-            NamaLabel.Size = new Size(39, 38);
-            NamaLabel.TabIndex = 0;
-            NamaLabel.Text = "Nama";
-            NamaLabel.TextAlign = ContentAlignment.MiddleLeft;
+            Update.Dock = DockStyle.Fill;
+            Update.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Update.Location = new Point(171, 10);
+            Update.Margin = new Padding(10);
+            Update.Name = "Update";
+            Update.Size = new Size(141, 94);
+            Update.TabIndex = 1;
+            Update.Text = "Update";
+            Update.UseVisualStyleBackColor = true;
+            Update.Click += Update_Click;
             // 
-            // AlamatLabel
+            // InsertButton
             // 
-            AlamatLabel.AutoSize = true;
-            AlamatLabel.Dock = DockStyle.Left;
-            AlamatLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AlamatLabel.Location = new Point(3, 38);
-            AlamatLabel.Name = "AlamatLabel";
-            AlamatLabel.Size = new Size(46, 40);
-            AlamatLabel.TabIndex = 2;
-            AlamatLabel.Text = "Alamat";
-            AlamatLabel.TextAlign = ContentAlignment.MiddleLeft;
+            InsertButton.Dock = DockStyle.Fill;
+            InsertButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            InsertButton.Location = new Point(10, 10);
+            InsertButton.Margin = new Padding(10);
+            InsertButton.Name = "InsertButton";
+            InsertButton.Size = new Size(141, 94);
+            InsertButton.TabIndex = 0;
+            InsertButton.Text = "Insert";
+            InsertButton.UseVisualStyleBackColor = true;
+            InsertButton.Click += InsertButton_Click;
             // 
-            // NoHandphoneLabel
+            // panel2
             // 
-            NoHandphoneLabel.AutoSize = true;
-            NoHandphoneLabel.Dock = DockStyle.Left;
-            NoHandphoneLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            NoHandphoneLabel.Location = new Point(3, 78);
-            NoHandphoneLabel.Name = "NoHandphoneLabel";
-            NoHandphoneLabel.Size = new Size(90, 36);
-            NoHandphoneLabel.TabIndex = 4;
-            NoHandphoneLabel.Text = "No Handphone";
-            NoHandphoneLabel.TextAlign = ContentAlignment.MiddleLeft;
+            panel2.Controls.Add(dataGridView);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(15, 235);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(770, 140);
+            panel2.TabIndex = 3;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(770, 140);
-            dataGridView1.TabIndex = 0;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Dock = DockStyle.Fill;
+            dataGridView.Location = new Point(0, 0);
+            dataGridView.Name = "dataGridView";
+            dataGridView.Size = new Size(770, 140);
+            dataGridView.TabIndex = 0;
+            dataGridView.CellContentClick += dataGridView_CellContentClick;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(panel4);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(15, 375);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(770, 63);
+            panel3.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(tableLayoutPanel4);
+            panel4.Dock = DockStyle.Right;
+            panel4.Location = new Point(629, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(141, 63);
+            panel4.TabIndex = 1;
             // 
             // tableLayoutPanel4
             // 
@@ -280,33 +307,7 @@
             LoadButton.TabIndex = 0;
             LoadButton.Text = "Load Data";
             LoadButton.UseVisualStyleBackColor = true;
-            // 
-            // NamaBox
-            // 
-            NamaBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            NamaBox.Location = new Point(108, 7);
-            NamaBox.Margin = new Padding(0);
-            NamaBox.Name = "NamaBox";
-            NamaBox.Size = new Size(178, 23);
-            NamaBox.TabIndex = 5;
-            // 
-            // AlamatBox
-            // 
-            AlamatBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            AlamatBox.Location = new Point(108, 46);
-            AlamatBox.Margin = new Padding(0);
-            AlamatBox.Name = "AlamatBox";
-            AlamatBox.Size = new Size(178, 23);
-            AlamatBox.TabIndex = 6;
-            // 
-            // HandphoneBox
-            // 
-            HandphoneBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            HandphoneBox.Location = new Point(108, 84);
-            HandphoneBox.Margin = new Padding(0);
-            HandphoneBox.Name = "HandphoneBox";
-            HandphoneBox.Size = new Size(178, 23);
-            HandphoneBox.TabIndex = 7;
+            LoadButton.Click += LoadButton_Click;
             // 
             // Form
             // 
@@ -324,17 +325,17 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Data Users: C# x PostGres";
-            Load += Form1_Load;
+            Load += Form_Load;
             Header.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel4.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -356,7 +357,7 @@
         private Button Update;
         private Label NoHandphoneLabel;
         private Label AlamatLabel;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView;
         private TableLayoutPanel tableLayoutPanel4;
         private Button LoadButton;
         private TextBox NamaBox;

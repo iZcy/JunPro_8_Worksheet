@@ -32,8 +32,9 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION st_select()
 RETURNS TABLE(id VARCHAR, name VARCHAR, alamat VARCHAR, no_handphone VARCHAR) AS $$
 BEGIN
-	RETURN QUERY
-	SELECT id, name, alamat, no_handphone FROM tb_users;
+    RETURN QUERY
+    SELECT tb_users.id, tb_users.name, tb_users.alamat, tb_users.no_handphone
+    FROM tb_users;
 END;
 $$ LANGUAGE plpgsql;
 
