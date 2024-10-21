@@ -44,6 +44,7 @@ namespace JunPro_8_Worksheet
             catch (Exception ex)
             {
                 MessageBox.Show("Error:" + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
             }
         }
 
@@ -73,6 +74,7 @@ namespace JunPro_8_Worksheet
             catch (Exception ex)
             {
                 MessageBox.Show("Error:" + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
             }
         }
 
@@ -88,7 +90,7 @@ namespace JunPro_8_Worksheet
             {
                 conn.Open();
 
-                sql = @"SELECT * FROM st_update(:_name,:_alamat,:_no_handphone)";
+                sql = @"SELECT * FROM st_update(:_id,:_name,:_alamat,:_no_handphone)";
                 cmd = new NpgsqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("_id", r.Cells["id"].Value.ToString());
@@ -107,6 +109,7 @@ namespace JunPro_8_Worksheet
                 r = null;
             } catch (Exception ex) {
                 MessageBox.Show("Error:" + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
             }
         }
 
@@ -148,6 +151,7 @@ namespace JunPro_8_Worksheet
             catch (Exception ex)
             {
                 MessageBox.Show("Error:" + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
             }
         }
 
