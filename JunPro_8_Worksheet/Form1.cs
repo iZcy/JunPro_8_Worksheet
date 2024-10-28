@@ -11,7 +11,7 @@ namespace JunPro_8_Worksheet
         }
 
         private NpgsqlConnection conn;
-        string connstring = String.Format("Host=localhost;Port=5432;Username=postgres;Password=Z@cky4JunPro;Database=ListofName");
+        string connstring = String.Format("Host=localhost;Port=5432;Username=postgres;Password=2matasaya;Database=ListofName");
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
@@ -85,7 +85,7 @@ namespace JunPro_8_Worksheet
                 MessageBox.Show("Mohon pilih baris yang akan di-update!!", "WARNING!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
             try
             {
                 conn.Open();
@@ -107,7 +107,9 @@ namespace JunPro_8_Worksheet
                 LoadButton.PerformClick();
                 NamaBox.Text = AlamatBox.Text = HandphoneBox.Text = null;
                 r = null;
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Error:" + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
@@ -115,7 +117,8 @@ namespace JunPro_8_Worksheet
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            if (r  == null) {
+            if (r == null)
+            {
                 MessageBox.Show("Mohon pilih baris yang akan dihapus!!", "WARNING!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -157,12 +160,48 @@ namespace JunPro_8_Worksheet
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) {
+            if (e.RowIndex >= 0)
+            {
                 r = dataGridView.Rows[e.RowIndex];
                 NamaBox.Text = r.Cells["name"].Value.ToString();
                 AlamatBox.Text = r.Cells["alamat"].Value.ToString();
                 HandphoneBox.Text = r.Cells["no_handphone"].Value.ToString();
             }
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void QR_button(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void QR_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
