@@ -11,7 +11,7 @@ namespace JunPro_8_Worksheet
         }
 
         private NpgsqlConnection conn;
-        string connstring = String.Format("Host=localhost;Port=5432;Username=postgres;Password=2matasaya;Database=ListofName");
+        string connstring = String.Format("Host=localhost;Port=5432;Username=postgres;Password='2Matasaya_';Database=ListofName");
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
@@ -169,39 +169,10 @@ namespace JunPro_8_Worksheet
             }
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        private void QRButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void QR_button(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void QR_button_Click(object sender, EventArgs e)
-        {
-
+            Form2 f2 = new Form2(this);
+            f2.Show();
         }
     }
 }

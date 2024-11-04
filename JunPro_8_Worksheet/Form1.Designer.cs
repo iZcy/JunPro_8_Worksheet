@@ -40,6 +40,7 @@
             NamaLabel = new Label();
             NamaBox = new TextBox();
             tableLayoutPanel3 = new TableLayoutPanel();
+            QRButton = new Button();
             Delete = new Button();
             Update = new Button();
             InsertButton = new Button();
@@ -211,17 +212,30 @@
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(540, 152);
+            tableLayoutPanel3.Size = new Size(472, 114);
             tableLayoutPanel3.TabIndex = 1;
+            // 
+            // QRButton
+            // 
+            QRButton.Dock = DockStyle.Fill;
+            QRButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            QRButton.Location = new Point(364, 10);
+            QRButton.Margin = new Padding(10);
+            QRButton.Name = "QRButton";
+            QRButton.Size = new Size(98, 94);
+            QRButton.TabIndex = 3;
+            QRButton.Text = "Generate QR";
+            QRButton.UseVisualStyleBackColor = true;
+            QRButton.Click += QRButton_Click;
             // 
             // Delete
             // 
             Delete.Dock = DockStyle.Fill;
             Delete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Delete.Location = new Point(281, 13);
-            Delete.Margin = new Padding(11, 13, 11, 13);
+            Delete.Location = new Point(246, 10);
+            Delete.Margin = new Padding(10);
             Delete.Name = "Delete";
-            Delete.Size = new Size(113, 126);
+            Delete.Size = new Size(98, 94);
             Delete.TabIndex = 2;
             Delete.Text = "Delete";
             Delete.UseVisualStyleBackColor = true;
@@ -231,10 +245,10 @@
             // 
             Update.Dock = DockStyle.Fill;
             Update.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Update.Location = new Point(146, 13);
-            Update.Margin = new Padding(11, 13, 11, 13);
+            Update.Location = new Point(128, 10);
+            Update.Margin = new Padding(10);
             Update.Name = "Update";
-            Update.Size = new Size(113, 126);
+            Update.Size = new Size(98, 94);
             Update.TabIndex = 1;
             Update.Text = "Update";
             Update.UseVisualStyleBackColor = true;
@@ -247,7 +261,7 @@
             InsertButton.Location = new Point(11, 13);
             InsertButton.Margin = new Padding(11, 13, 11, 13);
             InsertButton.Name = "InsertButton";
-            InsertButton.Size = new Size(113, 126);
+            InsertButton.Size = new Size(98, 94);
             InsertButton.TabIndex = 0;
             InsertButton.Text = "Insert";
             InsertButton.UseVisualStyleBackColor = true;
@@ -387,9 +401,9 @@
         private DataGridView dataGridView;
         private TableLayoutPanel tableLayoutPanel4;
         private Button LoadButton;
-        private TextBox NamaBox;
-        private TextBox HandphoneBox;
-        private TextBox AlamatBox;
+        public TextBox NamaBox;
+        public TextBox HandphoneBox;
+        public TextBox AlamatBox;
         private Button QRButton;
     }
 }

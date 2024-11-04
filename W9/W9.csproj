@@ -8,9 +8,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Npgsql" Version="8.0.5" />
-    <PackageReference Include="QRCoder" Version="1.6.0" />
-  </ItemGroup>
-
 </Project>
